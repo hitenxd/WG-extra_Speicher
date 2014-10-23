@@ -1,0 +1,6 @@
+a)
+i reserviert sich in jedem schleifendurchlauf einen speicherplatz der größe int, gibt aber am Ende nur den speicher der größe eines ints und nicht alle ints frei.
+b)
+es wurde nicht genug speicher allokiert für das array, da d[1] und d[2] die 2. und 3. position des arrays anspricht und nur 2 plätze reserviert wurden.
+c)
+fehler ist, dass das innere array noch keinen speicherplatz reserviert bekommen hat, dieser somit random ist, und somit dieser auch nicht freigegeben wird durch das free.
