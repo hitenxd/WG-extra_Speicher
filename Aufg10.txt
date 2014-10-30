@@ -1,0 +1,15 @@
+a)
+
+Ein Client Programm ist ein Prozess der einen Server Programm anfragt und anschließend auf eine Antwort wartet.
+Ein Server Programm wartet im Normalfall auf Anfragen von Client Programmen um ihre Anfragen zu bearbeiten und entsprechende Antworten zu senden.
+
+Es ist also unüblich für einen Server Dienste von einem speziellen Clienten anzufragen.
+
+b)
+
+Ein Programm verwendet Ports um bestimmte Prozesse auf dem Ziel-System zu erreichen.
+
+c)
+
+Ein Entwickler könnte sich für UDP entscheiden wenn es ihm nicht wichtig ist, dass die Daten komplett und fehlerfrei ankommen.
+Das ist zum Beispiel der Fall bei Streaming von Videos oder Musik, bei denen kleine Abweichungen von dem Original nicht wichtig sind.
