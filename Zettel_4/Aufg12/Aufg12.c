@@ -1,8 +1,11 @@
 #include <netinet/in.h>
+#include <sys/socket.h>
+#include <netdb.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <arpa/inet.h>
+#include "Auf12.h"
 
 int big_endian(){   
  int a = 0x00000001;
@@ -20,7 +23,7 @@ int big_endian(){
 
 char *my_inet_ntoa(struct in_addr in){
 int i=0,j=0,k=0,temp_calc=0,zeroAmmount=0,endian=big_endian();
-printf("%i \n",endian);
+
 char *temp =malloc(sizeof(char)*15);
 unsigned int addr = *(unsigned int *)&in;
 
@@ -56,6 +59,7 @@ int getDigit(int a, int b){
 	if(b==0)return hDig;
 	if(b==1)return zDig;
 	if(b==2)return eDig;
+	return 0;
 }
 
 int getBit(int a,int b){
@@ -67,13 +71,23 @@ return 0;
 
 
 
+
+
 int main(){
 struct in_addr adrr;
+//char host[30];
+//scanf("%s",&host);
 adrr.s_addr=0x12345678;
-int i=big_endian();
+//int i=big_endian();
 
 char*a=my_inet_ntoa(adrr);
 printf("%s\n",a);
+
+//struct addrinfo **inf;
+//struct addrinfo hint;
+
+//getaddrinfo(host,NULL, NULL,inf);
+
 
 return 0;
 
