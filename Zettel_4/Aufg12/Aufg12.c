@@ -14,6 +14,13 @@ int big_endian(){
 	}
 }
 
+char *my_inet_ntoa(struct in_addr in)
+{
+
+unsigned int addr = *(unsigned int *)&in;
+}
+
+
 int main(){
 int i=big_endian();
 
