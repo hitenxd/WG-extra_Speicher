@@ -31,7 +31,7 @@ int empfangstarten(){
 		return -1;
 	}
 
-	printf("eigene portnummer: "+ getsockname(fd, (struct sockaddr *)&addr,&sizeaddr) );
+	printf("eigene portnummer: %i ", getsockname(fd, (struct sockaddr *)&addr,&sizeaddr) );
 
 	return fd;
 }
