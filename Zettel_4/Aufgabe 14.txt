@@ -1,0 +1,13 @@
+a)
+p = feld;
+ist zulässig da p dann auf den beginn des arrays zeigt.
+
+b)
+feld=p;
+nicht zulässig da man versucht ein array nur mit einen pointer zu belegen.
+
+c) p = &feld[3]
+p zeigt dann auf die addresse von dem wert in feld[3], zulässig.
+
+d)
+zulässig, da p[5] eine schreibweise ist für referenzierung von p+5*sizeof(datentyp(int)) ist.
