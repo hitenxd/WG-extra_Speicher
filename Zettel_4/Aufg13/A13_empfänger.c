@@ -10,6 +10,7 @@
 #include <netinet/in.h>
 #include <stdio.h>
 #include <netdb.h>
+#include <unistd.h>
 
 int empfangstarten(){
 	int fd, err;
@@ -22,7 +23,7 @@ int empfangstarten(){
 	addr.sin_family = AF_INET;
 	addr.sin_port = htons(0);
 	addr.sin_addr.s_addr = htonl(INADDR_ANY);
-
+	printf("tüdelü");
 	int sizeaddr=sizeof(addr);
 
 	err = bind(fd, (struct sockaddr *) &addr, sizeof(struct sockaddr_in));
@@ -31,7 +32,7 @@ int empfangstarten(){
 		return -1;
 	}
 
-	printf("eigene portnummer: %i ", getsockname(fd, (struct sockaddr *)&addr,&sizeaddr) );
+	printf("eigene portnummer:  %i", getsockname(fd, (struct sockaddr *)&addr,&sizeaddr) );
 
 	return fd;
 }
@@ -71,6 +72,7 @@ int datenerhalten(int fd){
 
 
 int main(){
+	printf("tüdelü");
 	datenerhalten(empfangstarten());
 	return 0;
 }
