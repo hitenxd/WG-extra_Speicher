@@ -58,7 +58,7 @@ int datenerhalten(int fd){
 
 	}
 
-	printf("Ip-Adresse: %i Port: %i Hostname: %s \n" ,from.sin_addr, from.sin_port, name);
+	printf("Ip-Adresse: %u Port: %hu Hostname: %s \n" ,from.sin_addr.s_addr, from.sin_port, name);
 
 	if(msg[0]==' '		){
 		close(fd);
