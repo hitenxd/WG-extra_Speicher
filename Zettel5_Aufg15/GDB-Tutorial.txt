@@ -1,0 +1,17 @@
+gcc -g -o test Auf15.c      // Debugg informationen erstellen (-g)
+gdb test                    // Debugger starten
+break 18                    // Breakpoint in Zeile 18
+break alloc_test            // Breakpoint bei Funktion alloc_test
+run                         // Programm starten
+next                        // Programm wird beim ersten Breakpoint stoppen, 
+next                        // dann kann mit next schrittweise weiter gemacht werden
+.
+.
+.
+print mb                    // Wert der Variablen mb ausgeben
+continue                    // weitermachen bis zum Ende oder nächsten Breakpoint
+quit                        // Debuggen beenden
+
+
+ps: man sollte noch fehler in ner readme protokollieren, jedoch gab es keine fehler :/ das programm kompiliert 
+und funktioniert wie es sollte ohne was zu ändern aber vlt findet ja doch noch wer ne kleinigkeit.
