@@ -1,0 +1,10 @@
+Exception: STATUS_ACCESS_VIOLATION at eip=611275CF
+eax=00000000 ebx=00000000 ecx=0022A3C2 edx=00000000 esi=0022A3B3 edi=200286A8
+ebp=0022ABD8 esp=0022A340 program=C:\Dokumente und Einstellungen\Duria\workspace\Zettel5\Debug\Zettel5.exe, pid 2156, thread main
+cs=001B ds=0023 es=0023 fs=003B gs=0000 ss=0023
+Stack trace:
+Frame     Function  Args
+0022ABD8  611275CF (00000003, 00402274, 004020D3, 61083501)
+0022AC08  0040157A (00000001, 0022AC2C, 200285D8, 61007F58)
+0022AD28  61007FB5 (00000000, 0022CDB4, 61007120, 00000000)
+End of stack trace
