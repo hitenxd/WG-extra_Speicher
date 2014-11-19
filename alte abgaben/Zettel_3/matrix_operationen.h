@@ -9,8 +9,7 @@
 #define ZETTEL_3_MATRIX_OPERATIONEN_H_
 
 struct matrix{
-	long *zeilen;
-	long *spalten;
+	long **zeilenspalten;
 	int zeilen_anzahl;
 	int spalten_anzahl;
 };

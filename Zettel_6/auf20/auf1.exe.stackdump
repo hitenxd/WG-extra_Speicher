@@ -1,0 +1,10 @@
+Exception: STATUS_ACCESS_VIOLATION at eip=61126D53
+eax=00000004 ebx=0040217C ecx=00000001 edx=00000004 esi=00000000 edi=00000004
+ebp=0022A968 esp=0022A964 program=C:\Dokumente und Einstellungen\duria\workspace\zettel6\auf1.exe, pid 480, thread main
+cs=001B ds=0023 es=0023 fs=003B gs=0000 ss=0023
+Stack trace:
+Frame     Function  Args
+0022A968  61126D53 (00000004, 0022AA30, 0040217C, 00000001)
+0022AABC  61131322 (0022AAC4, 611892AC, 00000000, 00000000)
+00230000  0022CDA8 (00000001, 0000249C, 000000C4, 00000000)
+End of stack trace

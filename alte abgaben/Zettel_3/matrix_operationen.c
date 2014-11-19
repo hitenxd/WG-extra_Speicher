@@ -13,9 +13,8 @@ struct matrix *matrix_erstellen(int zeilen, int spalten){
 
 	neueMatrix->zeilen_anzahl=zeilen;
 	neueMatrix->spalten_anzahl=spalten;
-	neueMatrix->zeilen=malloc(zeilen*sizeof(long));
-	neueMatrix->spalten=malloc(spalten*sizeof(long));
-
+	neueMatrix->*zeilenspalten=malloc(spalten_anzahl*sizeof(long));
+	neueMatrix->zeilenspalten=malloc(zeilen_anzahl*sizeof(long));
 	return neueMatrix;
 }
 

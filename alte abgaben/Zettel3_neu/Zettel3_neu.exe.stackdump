@@ -1,0 +1,10 @@
+Exception: STATUS_ACCESS_VIOLATION at eip=004014B2
+eax=00000000 ebx=20028248 ecx=000166F6 edx=20080000 esi=00000000 edi=200281B8
+ebp=0022ABC8 esp=0022AB90 program=C:\Dokumente und Einstellungen\Duria\workspace\Zettel3_neu\Debug\Zettel3_neu.exe, pid 4588, thread main
+cs=001B ds=0023 es=0023 fs=003B gs=0000 ss=0023
+Stack trace:
+Frame     Function  Args
+0022ABC8  004014B2 (20028218, 00000004, 00000060, 61083501)
+0022ABF8  004016B9 (00000001, 0022AC1C, 200280E8, 61007F58)
+0022AD28  61007FB5 (00000000, 0022CDB4, 61007120, 00000000)
+End of stack trace
