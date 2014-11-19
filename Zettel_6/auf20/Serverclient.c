@@ -9,8 +9,8 @@
 #include <netinet/in.h>
 #include <netdb.h>
 #include <arpa/inet.h>
-
 #include "Serverclient.h"
+
 int sock(){
 
 	int fd;
