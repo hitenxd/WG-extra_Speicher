@@ -12,7 +12,7 @@ int main(void) {
  if (year<=0)
  printf("Positiv?\n"); } while(year<=0);
  if(schaltjahr(&year))
- printf("Das Jahr %i ist ein Schaltjahr.\n", &year);
+ printf("Das Jahr %i ist ein Schaltjahr.\n", year); //nicht referenzieren!
  else
  printf("Das Jahr %i ist kein Schaltjahr.\n", year);
  return 0;
