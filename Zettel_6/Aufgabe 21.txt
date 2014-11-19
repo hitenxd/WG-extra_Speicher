@@ -1,0 +1,13 @@
+Aufgabe 21
+
+Welche Parameter müssen angegeben werden um nur TCP-Sockets zu sehen?
+
+ss -t, --tcp
+
+Welcher Parameter muss gesetzt sein damit alle Sockets unabhängig von ihrem aktuellen Status gelistet 
+werden?
+
+ss -a, --all
+
+Was passiert, wenn Sie im Server die Verbindung nicht mit close() schließen und
+den Client abbrechen (strg-c)?
