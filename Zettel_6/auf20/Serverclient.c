@@ -12,6 +12,7 @@
 
 #include "Serverclient.h"
 int sock(){
+
 	int fd;
 	fd = socket(AF_INET,SOCK_STREAM,0);
 	if (fd<0) {
@@ -31,7 +32,7 @@ int verbinden(int fd, char* host, int port){
 	addr.sin_family = AF_INET;
 	addr.sin_port = htons(port);
 	addr.sin_addr.s_addr  = inet_addr(host);
-	printf("vebrindungsaufbau...");
+	printf("vebrindungsaufbau...\n");
 	if((connect(fd, (struct sockaddr*)&addr, sizeof(addr))<0)){
 		printf("Fehler beim connecten\n");
 		return -1;
@@ -67,11 +68,11 @@ int schreiben(int fd){
 	max = antwortauswerten(recmsg);
 
 	while(!strcmp(abfrage,"abheben") || strcmp(abfrage,"einzahlen") || strcmp(abfrage,"abbrechen")){
-		printf("wollen sie Geld abheben, einzahlen oder abbrechen ?");
+		printf("wollen sie Geld abheben, einzahlen oder abbrechen ?\n");
 
 		scanf("%s",abfrage);
-		if(!strcmp(abfrage,"abheben") || strcmp(abfrage,"einzahlen") || strcmp(abfrage,"abbrechen")){
-			printf("ungültige eingabe!...");
+		if(strcmp(abfrage,"abheben") || strcmp(abfrage,"einzahlen") || strcmp(abfrage,"abbrechen")){
+			printf("ungültige eingabe!...\n");
 		}
 	}
 	if(!strcmp(abfrage,"abbrechen")){
@@ -81,7 +82,7 @@ int schreiben(int fd){
 		write(fd, abfrage, sizeof(abfrage));
 		sprintf(money,"%i",loop(abfrage, max));
 		write(fd, money, sizeof(money));
-		close(fd);
+		beende(fd);
 	}
 
 	return 0;
@@ -94,41 +95,41 @@ int schreiben(int fd){
 	 eingabe="ja";
 	 if(!strcmp(msg,"einzahlen")){
 		 while(!strcmp(eingabe,"ja")>0){
-			 printf("wie viel wollen sie einzahlen?");
+			 printf("wie viel wollen sie einzahlen? \n");
 			 scanf("%i",&money);
 			 if(money<0){
-				 printf("es können keine minuszahlen eingezahlt werden!");
+				 printf("es können keine minuszahlen eingezahlt werden!\n");
 			 }else{
 					 count += money;
 			}
-			 printf("weiter einzahlen? [ja/nein]");
+			 printf("weiter einzahlen? [ja/nein]\n");
 			 scanf("%s",eingabe);
 		}
 	 }
 	 if(!strcmp(msg,"abheben")){
 		 while(!strcmp(eingabe,"ja")>0){
-			 printf("wie viel wollen sie abheben?");
+			 printf("wie viel wollen sie abheben?\n");
 			 scanf("%i",&money);
 			 if(money<0){
-				 printf("es können keine minuszahlen abgehoben werden!");
+				 printf("es können keine minuszahlen abgehoben werden!\n");
 			 }else{
 				 if(max-(count+money)<0){
-					 printf("sie haben nicht genug geld dafür");
+					 printf("sie haben nicht genug geld dafür\n");
 				 }else{
 					 count += money;
 				 }
 			}
-			 printf("weiter abheben? [ja/nein]");
+			 printf("weiter abheben? [ja/nein]\n");
 			 scanf("%s",eingabe);
 		}
-		 printf("es wurde insgesamt [%i] Euro abgehoben, verbindung wird geschlossen", count);
+		 printf("es wurde insgesamt [%i] Euro abgehoben, verbindung wird geschlossen\n", count);
 		 return count;
 	 }
 	 return 0;
  }
 
 int antwortauswerten(char* msg){
-	printf("du kannst maximal %s abheben", msg);
+	printf("du kannst maximal %s abheben \n", msg);
 	int e=atoi(msg);
 	return e;
 }
@@ -138,11 +139,11 @@ int main(){
 	printf("IP eingeben: ");
 	scanf("%s",host);
 
-	printf("Port eingeben: ");
+	printf("\n Port eingeben: ");
 	scanf("%i",&Port);
 	fd = sock();
 	if(!verbinden(fd,host,Port)){
-
+		schreiben(fd);
 	}
 	return 0;
 }
