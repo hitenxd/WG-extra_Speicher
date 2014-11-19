@@ -8,6 +8,7 @@
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <netdb.h>
+#include <arpa/inet.h>
 
 #include "Serverclient.h"
 int sock(){
@@ -61,7 +62,7 @@ int schreiben(int fd){
 	int max;
 	char* abfrage=malloc(12*sizeof(char));
 	char* recmsg=malloc(12*sizeof(char));
-	char* money;
+	char* money=malloc(12*sizeof(char));
 	read(fd,recmsg,sizeof(recmsg));
 	max = antwortauswerten(recmsg);
 
@@ -78,8 +79,7 @@ int schreiben(int fd){
 		return 0;
 	}else{
 		write(fd, abfrage, sizeof(abfrage));
-		money = (char*)loop(abfrage, max);
-
+		sprintf(money,"%i",loop(abfrage, max));
 		write(fd, money, sizeof(money));
 		close(fd);
 	}
