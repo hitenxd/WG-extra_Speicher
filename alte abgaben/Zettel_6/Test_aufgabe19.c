@@ -22,4 +22,9 @@ int schaltjahr(int *year){
  return 1;
  else
  return 0;
+ int i;int *p1,*p2;
+ p1 = p2 +i;
+ p1 = i + p2;
+ i = p1 * p2;
+ i = p1–p2;
 }

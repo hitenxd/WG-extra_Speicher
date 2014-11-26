@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.1283992918/CYGWIN_HOME/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.1283992918/CYGWIN_HOME/operation=replace
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.1283992918/CYGWIN_HOME/value=c\:\\cygwin\\bin
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.1283992918/MINGW/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.1283992918/MINGW/operation=append
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.1283992918/MINGW/value=C\:\\MinGW\\bin
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.1283992918/append=true
+environment/project/cdt.managedbuild.config.gnu.cygwin.exe.debug.1283992918/appendContributed=true
