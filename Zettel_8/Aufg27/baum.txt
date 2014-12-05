@@ -1,0 +1,20 @@
+a) parent->parent.child->child.child->parent.child2
+
+b) 12 zeilen. 
+cnt = 0, fork_pid = 	1, my_pid = 	1368
+cnt = 1, fork_pid =  3748, my_pid = 	1368
+cnt = 2, fork_pid =  3764, my_pid = 	1368
+cnt = 0, fork_pid = 	1, my_pid = 	1368
+cnt = 1, fork_pid =  3748, my_pid = 	1368
+cnt = 2, fork_pid = 	0, my_pid = 	3764
+cnt = 0, fork_pid = 	1, my_pid = 	1368
+cnt = 1, fork_pid = 	0, my_pid = 	3748
+cnt = 2, fork_pid =  3772, my_pid = 	3748
+cnt = 0, fork_pid = 	1, my_pid = 	1368
+cnt = 1, fork_pid = 	0, my_pid = 	3748
+cnt = 2, fork_pid = 	0, my_pid = 	3772
+
+fork_pid= parent id
+my_pid  = eigene id
+
+c) dem prozess wird manchmal eine andere id zugewiesen bei erneuten aufruf
