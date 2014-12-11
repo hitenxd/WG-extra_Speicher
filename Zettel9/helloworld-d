@@ -1,0 +1,1 @@
+der stack ist wichtig, da call die rücksprungadresse auf den stack legt und ret die rücksprungadresse vom stack nimmt zum zurückspringen
