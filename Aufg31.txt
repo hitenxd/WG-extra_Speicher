@@ -1,0 +1,19 @@
+a)  a. Das Programm bricht ab.
+    b. Je nachdem wann man abbricht unterschiedlich, z.B. fdcl=accept(fd,(struct sockaddr *) &addr,&addrlen);
+    c. Bricht normal ab, der Client bekommt keine Antwort mehr und verarbeitet es als verbindung verloren
+       Bei neustart des Programs merkt man, dass der port blockiert ist, da er nicht ordentlich frei gegeben wurde.
+    d. Wenn der port nicht aktiv benutzt wird, also noch keine verbindung aufgebaut wurde.
+
+b) 
+    #include <signal.h>
+    
+    
+    void sigfunc(int sig){
+       if(sig==SIGINT)beende();
+    } 
+
+
+    signal(SIGINT, sigfunc);    
+
+c)  Da der Abbruch nun korekt abgefangen wird, werden sockets entsprechend geschlossen, ports freigegeben und
+    verbindungen somit getrennt. Die letzte befhelszeile ist weiterhin beliebig, da das signal jederzeit kommen kann. 
