@@ -1,0 +1,95 @@
+X=100.000.000
+
+mit 2 anderen Prozessen mit nice-Wert 0:
+
+     sec
+    7 | 
+      |                                                                       0 | 5.76s
+ 6.75 |                                                                       1 | 6.15s      14| 5.63   
+      |                                                                       2 | 5.89s      15| 5.81   
+  6.5 |                                                                       3 | 6.05s      16| 5.86s                
+      |                                                                       4 | 5.87s      17| 6.17s   
+ 6.25 |                                                                       5 | 5.71s      18| 5.74s   
+      |   x                                               x                   6 | 5.86s      19| 6s   
+    6 |         x                                               x             7 | 5.8s
+      |      x     x     x                    x        x                      8 | 5.41s
+ 5.75 x               x     x                       x        x                9 | 5.49s
+      |                                 x  x     x                            10| 5.58s
+  5.5 |                        x  x  x                                        11| 5.67s
+      |                                                                       12| 5.68s
+ 5.25 |                                                                       13| 5.92s
+      |                                                                      
+    5 |                                                         
+      |__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,_
+      0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19  nice-Wert
+     
+
+mit 2 anderen Prozessen mit nice-Wert 10:
+
+     sec
+    7 | 
+      |                                                                       0 | 6s
+ 6.75 |                                                                       1 | 5.94s      14| 5.71s   
+      |                                                                       2 | 5.89s      15| 5.66s   
+  6.5 |                                                                       3 | 5.76s      16| 5.72s                
+      |                                                                       4 | 5.63s      17| 5.69s   
+ 6.25 |                                                                       5 | 5.84s      18| 5.66s   
+      |                                                                       6 | 5.76s      19| 5.67s   
+    6 x  x                                                                    7 | 5.58s
+      |     x        x           x                                            8 | 5.7s
+ 5.75 |        x        x     x     x        x  x     x  x                    9 | 5.83s
+      |           x                    x  x        x        x  x              10| 5.72s
+  5.5 |                    x                                                  11| 5.64s
+      |                                                                       12| 5.67s
+ 5.25 |                                                                       13| 5.73s
+      |                                             
+    5 |                                             
+      |__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,_
+      0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19  nice-Wert
+     
+
+mit 2 anderen Prozessen mit nice-Wert 19:
+
+     sec
+    7 | 
+      |                                                                       0 | 5.87s
+ 6.75 |                                                                       1 | 5.71s      14| 5.8s   
+      |                                                                       2 | 5.76s      15| 5.87s   
+  6.5 |                                                                       3 | 5.74s      16| 5.8s                
+      |                                                                       4 | 5.63s      17| 6.01s   
+ 6.25 |                                                                       5 | 5.66s      18| 5.78s   
+      |                                                                       6 | 5.69s      19| 5.81s   
+    6 |                                                  x                    7 | 5.67s
+      x                             x  x  x  x     x                          8 | 5.65s
+ 5.75 |  x  x           x        x              x     x     x  x              9 | 5.69s
+      |        x  x  x     x  x                                               10| 5.86s
+  5.5 |                                                                       11| 5.84s
+      |                                                                       12| 5.85s
+ 5.25 |                                                                       13| 5.85s
+      |                                             
+    5 |                                             
+      |__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,__,_
+      0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19  nice-Wert
+     
+
+
+
+
+
+
+1. Umso mehr Prozesse, umso länger brauchen sie jeweils.
+2. Umso höher der nice-Wert, umso geringer die Priorität.
+3. Umso geringer die Priorität, umso länger braucht der Prozess.
+
+
+
+
+
+
+
+AMD FX(tm)-6300 Six-Core 3.50 GHz, 8 GB RAM, Windows 7 64 Bit
+
+
+
+
+
