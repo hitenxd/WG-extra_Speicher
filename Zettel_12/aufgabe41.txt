@@ -1,0 +1,9 @@
+41.
+
+(a): das Programm ruft aus 3 threads eine Methode zur wiedergabe der PID und PPID auf. 
+	dabei soll ein globaler counter inkrementiert werden, er läuft unter (a) von 0 bis 2
+	da die beiden im Programm erstellten threads nicht detached werden weisen sie alle die gleiche PID auf.
+	fork verdoppelt die threads, mit thread_create wird nur ein spezieller thread erstellt.
+
+(b): das Programm gibt in diesem fall 0, 1, 1 aus da sich der dritte thread bereits ausgibt bevor thread Nr.2 cnt erhöhen kann.
+	in der ersten Version wurde nach dem zweiten output gewartet um gleichzeite ausführung zu verhindern.
