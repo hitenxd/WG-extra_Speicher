@@ -1,0 +1,10 @@
+0					parent(0)
+|--------				   |--------------------
+|       |				   |		       |
+1       1				parent(1)           1.child(1)
+|---    |---                               |---------          |---------
+|  |    |  |                               |        |          |        |
+2  2    2  2	                    	parent(2) 2.child(2) 1.child(2) 1.childchild(2)
+
+
+b)vom 1. child 2 mal, vom 2 child 1 mal und vom childchild 1 mal.
